@@ -1,0 +1,10 @@
+[
+    {
+        "requestUrl": "testurl",
+        "statusCode": 200,
+        "requestType": "GET",
+        "headers": {},
+        "expectData": "testdata"
+
+    }
+]
