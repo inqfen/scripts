@@ -1,9 +1,17 @@
 import requests
 import json
+import argparse
 
-paramsFile = "E:\\scripts\\request\\params.json"
-logFile = "E:\\scripts\\request\\logfile"
+parser = argparse.ArgumentParser()
+parser.add_argument("--params_file", action='store', help='path to file with request parameters', required=True)
+parser.add_argument("--log_file", action='store', help='path to logfile')
+parser.add_argument("--write_log", action="store_true", help="add to write log, --log_file must be defined", )
+arguments = parser.parse_args()
 
+
+paramsFile = arguments.params_file
+logFile = arguments.log_file
+logNeed = arguments.write_log
 
 request_params = dict
 
@@ -73,14 +81,14 @@ def get_params_from_file(params_file):
     params_result = json.loads(json_params)
     return params_result
 
-par = get_params_from_file(paramsFile)
+app_requests = get_params_from_file(paramsFile)
 
-for site in par:
-    request_params = site
+for app in app_requests:
+    request_params = app
     req = Request()
     req.request()
     req.compare()
-    req.handle_results(log=True)
+    req.handle_results(logNeed)
 
 
 
