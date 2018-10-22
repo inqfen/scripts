@@ -1,10 +1,11 @@
 [
     {
-        "requestUrl": "testurl",
-        "statusCode": 200,
-        "requestType": "GET",
-        "headers": {},
-        "expectData": "testdata"
+        "RequestUrl": "https://e1.ru",
+        "StatusCode": 200,
+        "RequestMethod": "GET",
+        "Headers": {},
+        "ExpectData": "",
+        "PostData": {}
 
     }
 ]

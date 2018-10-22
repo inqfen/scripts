@@ -24,7 +24,7 @@ class Request:
         if request_params['RequestMethod'] == "GET":
             request = requests.get(request_params['RequestUrl'], headers=request_params['Headers'])
         elif request_params['RequestMethod']== "POST":
-            request = requests.post(request_params['RequestUrl'], data=request_params['Headers'])
+            request = requests.post(request_params['RequestUrl'], data=request_params['PostData'])
         else:
             print("Unkown request method")
             exit(1)
